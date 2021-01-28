@@ -2,23 +2,17 @@
 
 This is a gnss serial port development tool
 
-### Development
-
+### How to use
+1. Install dependencies
 ```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
+$ npm install
 ```
-
-### Deploy
-
+2. Run
 ```bash
-$ npm start
-$ npm stop
+$ npm run start
+$ open http://localhost:8001/admin/
 ```
-
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
+3. Stop
+```bash
+$ npm run stop
+```
