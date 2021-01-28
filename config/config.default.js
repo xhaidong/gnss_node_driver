@@ -3,6 +3,7 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 
 /**
  * @param {Egg.EggAppInfo} appInfo app info
@@ -19,6 +20,14 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
+
+  // static config
+  config.static = {
+    prefix: '/',
+  };
+  config.siteFile = {
+    '/favicon.ico': fs.readFileSync(path.join(appInfo.baseDir, 'app', 'public', 'favicon.ico')),
+  };
 
   // add your user config here
   const userConfig = {

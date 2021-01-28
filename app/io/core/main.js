@@ -166,6 +166,11 @@ class MainController {
 
     return data;
   }
+
+  async updateNtripStatus() {
+    const ctx = await this.app.createAnonymousContext();
+    ctx.service.ntrip.notifyList();
+  }
 }
 
 module.exports = MainController;

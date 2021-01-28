@@ -5,7 +5,7 @@
  */
 module.exports = app => {
   const { router, controller, io } = app;
-  router.get('/admin', controller.home.index);
+  router.get('/admin/*', controller.home.index);
 
   // socket.io
   io.of('/io').route('SP_LIST', io.controller.sp.list);

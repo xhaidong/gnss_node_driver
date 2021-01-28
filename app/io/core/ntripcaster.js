@@ -98,7 +98,10 @@ class Ntripcaster {
     });
 
     const doneOnce = utils.doOnce(async () => {
-      this.isReady = false;
+      if (this.isReady) {
+        this.isReady = false;
+        this.mc.updateNtripStatus();
+      }
       await utils.sleep(1000);
       this.connect();
     });
@@ -112,6 +115,7 @@ class Ntripcaster {
 
       if (data.toString().startsWith('ICY 200 OK')) {
         this.isReady = true;
+        this.mc.updateNtripStatus();
       }
     });
 
