@@ -8,7 +8,12 @@
   },
   "dependencies": {
     "egg": "^2.15.1",
-    "egg-scripts": "^2.11.0"
+    "egg-cors": "^2.2.3",
+    "egg-scripts": "^2.11.0",
+    "egg-socket.io": "^4.1.6",
+    "egg-validate": "^2.0.2",
+    "lodash": "^4.17.20",
+    "serialport": "^9.0.6"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -23,10 +28,10 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-gnss_node_driver",
-    "stop": "egg-scripts stop --title=egg-server-gnss_node_driver",
+    "start": "egg-scripts start --sticky --port=8001 --workers=1 --daemon --title=gnss_node_driver",
+    "stop": "egg-scripts stop --title=gnss_node_driver",
     "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
+    "debug": "egg-bin debug --sticky",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
