@@ -91,9 +91,10 @@ class SpController {
     });
 
     const doneOnce = utils.doOnce(async () => {
+      if (this.isReady) {
+        this.mc.updateSpStatus(this.port, false);
+      }
       this.isReady = false;
-      this.mc.updateSpStatus(this.port, this.isReady);
-
       await utils.sleep(1000);
       this.connect();
     });
