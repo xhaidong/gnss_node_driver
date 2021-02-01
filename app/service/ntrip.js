@@ -2,7 +2,6 @@
 
 const Service = require('egg').Service;
 const fs = require('fs');
-const _ = require('lodash');
 const fsp = fs.promises;
 const path = require('path');
 const ntripFile = 'ntrip_config.json';
